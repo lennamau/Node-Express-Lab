@@ -8,10 +8,6 @@ router.use(express.json())
 // add your server code starting here
 
 router.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-router.get("/", (req, res) => {
   db.find()
     .then(posts => {
       res.status(200).json({ posts });
