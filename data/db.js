@@ -1,9 +1,7 @@
 const knex = require('knex');
 
-const db = process.env.DB_ENV||'development';
-
-const knexConfig = require('../knexfile.js')[db];
-
+const knexConfig = require('../knexfile.js');
+const db = knex(knexConfig.development);
 
 module.exports = {
   find,
@@ -11,7 +9,9 @@ module.exports = {
   insert,
   update,
   remove,
-  knexConfig
+  knexConfig,
+  knex,
+  
 };
 
 function find() {
