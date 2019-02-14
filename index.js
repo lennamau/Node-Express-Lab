@@ -1,5 +1,10 @@
 // import your node modules
+require('dotenv').config();
 
-const db = require('./data/db.js');
+const server = require('./data/server')
 
-// add your server code starting here
+const port = process.env.PORT || 4000;
+
+server.listen(port, () => {
+  console.log(`\n*** Server Running on http://localhost:${4000}***\n`);
+});
